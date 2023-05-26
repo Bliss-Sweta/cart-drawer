@@ -1,0 +1,13 @@
+<script>
+    setInterval(() => {
+  if (document.querySelector('.slidecarthq .properties-key-value li')) {
+    let variants = document.querySelectorAll('.slidecarthq .properties-key-value li')
+
+    variants.forEach(element => {
+      if (element.textContent.indexOf("#MWS") >= 0) {
+        element.textContent = element.textContent.trim().split("#MWS")[0];
+      }
+    });
+  }
+}, 10);
+</script>

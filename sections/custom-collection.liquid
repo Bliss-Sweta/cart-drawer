@@ -1,0 +1,73 @@
+{% assign mobile = settings.cardMobile %}
+{% if section.settings.cardDesktop == "default" %}
+{% assign desktop = settings.cardDesktop %}
+{% else %}
+{% assign desktop = section.settings.cardDesktop %}
+{% endif %}
+<div class="collection-container layout__content sub_coll">
+  <div class="coll_title">
+<h1 class="page-title">{{collection.title}}</h1>
+  </div>
+    <div class="row row__collection-list max-width">
+      {% assign menu = linklists.header-main-menu.links %}
+      {%for link in menu %}
+        {% if link.object.url contains collection.handle %}
+          {% if link.links.size > 0 %}
+            {% for sub_link in link.links%}
+            {%assign collection = sub_link.object %}
+            <div class="nested_sub_link col-6 col-md-4 col-lg-{{desktop}}">
+              <div class="main_category card--holder">
+                {% render 'collection-card' with collection as collection %}
+              </div>
+              <div class="sub-category">
+                {% for grandchild_link in sub_link.links %}
+                <a href="{{ grandchild_link.url }}" class="collection__card--title cate_sub-title font__family--{{settings.collectionCardTextFont}} font__size--{{settings.collectionCardTextSize}}">
+                  {{ grandchild_link.title }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+            {%endfor%}
+          {%endif%}
+        {%endif%}
+      {% endfor %}
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Custom collection List",
+    "class": "custom-collection-list",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Layout"
+        },
+        {
+            "type": "select",
+            "id": "cardDesktop",
+            "label": "How many cards per row (Desktop)",
+            "options": [
+            {"value": "default", "label": "Global default"},
+            {"value": "1-5", "label": "5"},
+            {"value": "3", "label": "4"},
+            {"value": "4", "label": "3"}
+            ],
+            "default": "default"
+        },
+        {
+            "type": "range",
+            "label": "How many cards per page",
+            "id": "cardsPerPage",
+            "default": 15,
+            "min": 3,
+            "max": 50,
+            "step": 1
+        },
+        {
+            "type": "url",
+            "id": "coll_banner_link",
+            "label": "Collection Banner Link"
+        }
+    ]
+}
+{% endschema %}

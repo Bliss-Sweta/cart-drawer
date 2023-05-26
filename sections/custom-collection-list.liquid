@@ -1,0 +1,146 @@
+<div class="custom-collection-list_wrapper {{ section.settings.section_class }}">
+  <div class="container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="custom-collection-list-title {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    <div class="row">
+    {% for block in section.blocks %}
+      <div class="card-col {{ block.settings.col_width }}_width">
+        <div class="col_wrapper">
+          <a href="{{ block.settings.collection_url }}">
+            <div class="collection-card_inner">
+                {%- if block.settings.collection_image != blank -%}
+                  <img data-swift-lazy="1" loading="lazy" src="{{ block.settings.collection_image | img_url: 'master' }}" alt="" width="{{ card_collection.featured_image.width }}" height="{{ card_collection.featured_image.height }}" class="deskonly">
+                  {%- if block.settings.collection_image1 != blank -%}
+                    <img data-swift-lazy="1" loading="lazy" src="{{ block.settings.collection_image1 | img_url: 'master' }}" alt="" width="{{ card_collection.featured_image.width }}" height="{{ card_collection.featured_image.height }}" class="mobonly">
+                  {% endif %}
+                {%- endif -%}
+            </div>
+          </a>
+          <div class="collection-card_title">
+            <h3 class="collection_title"><a href="{{ block.settings.collection_url }}">{{ block.settings.collection_title }}</a></h3>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    {% if section.settings.viewall_btn != blank %}
+      <a href="{{ section.settings.viewall_url }}" class="view_more_btn">{{ section.settings.viewall_btn }}</a>
+    {% endif %}
+  </div>
+</div>
+<style>
+  .custom-collection-list .full_width {
+    width: 100%;
+  }
+  .custom-collection-list .half_width {
+    width: 50%;
+  }
+  .custom-collection-list .one-third_width {
+    width: 33.33%;
+  }
+  .custom-collection-list .one-forth_width {
+    width: 25%;
+  }
+  .custom-collection-list .one-fifth_width {
+    width: 20%;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Custom Collection List",
+    "class": "custom-collection-list",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_class",
+        "label": "Custom Section Class"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Custom Collections List",
+        "label": "Section Heading"
+      },
+      {
+        "type": "text",
+        "id": "viewall_btn",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "viewall_url",
+        "label": "Button Url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Add Collection",
+        "settings": [
+          {
+            "type": "select",
+            "id": "col_width",
+            "options": [
+              {
+                "value": "one-fifth",
+                "label": "one-fifth width of column"
+              },
+              {
+                "value": "one-forth",
+                "label": "one-forth width of column"
+              },
+              {
+                "value": "one-third",
+                "label": "one-third width of column"
+              },
+              {
+                "value": "half",
+                "label": "half width of column"
+              },
+              {
+                "value": "full",
+                "label": "full width of column"
+              }
+            ],
+            "default": "full",
+            "label": "Column Width"
+          },
+          {
+            "type": "image_picker",
+            "id": "collection_image",
+            "label": "Collection Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "collection_image1",
+            "label": "Collection Image for Mobile"
+          },
+          {
+            "type": "url",
+            "id": "collection_url",
+            "label": "Collection Url"
+          },
+          {
+            "type": "text",
+            "id": "collection_title",
+            "label": "Collection Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+		{
+          "name": "Custom Collection list",
+          "category": "collection",
+          "settings": {}
+		}
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,82 @@
+<section class="about-organizations-2 container">
+   <div class="card-container">
+  {% for block in section.blocks %}
+  <div class="col-sm-3 col-md-3 col-lg-2">
+    <div class="card">
+      <div class="card-box">
+  {% if block.settings.image != blank %}
+  <div class="img-box">
+    <img data-swift-lazy="1" loading="lazy" src="{{ block.settings.image | img_url:'original' }}">
+  </div>
+  {% endif %}
+    <div class="content-box">
+  {% if block.settings.heading != blank %}
+  <h4 class="heading">{{block.settings.heading}}</h4>
+  {% endif %}
+  {% if block.settings.subheading != blank %}
+  <p class="subheading">{{block.settings.subheading}}</p>
+  {% endif %}
+        </div>
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "About organizations 2",
+"max_blocks":12,
+    "settings": [
+{
+	"type":"text",
+	"id": "heading",
+	"label" : "Heading"
+},
+{
+	"type":"richtext",
+	"id": "detail",
+	"label" : "Detail"
+}
+
+],
+"blocks":[
+{
+	  "type": "image-box",
+      "name": "Image box", 
+
+      "settings": [
+{
+	"type":"image_picker",
+	"id": "image",
+	"label" : "Image"
+},
+{
+	"type":"text",
+	"id": "heading",
+	"label" : "Heading"
+},
+{
+	"type":"text",
+	"id": "subheading",
+	"label" : "Subheading"
+}
+
+
+]
+}
+],
+"presets":[{
+ "name": "About organizations 2",
+    "category": "About page"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

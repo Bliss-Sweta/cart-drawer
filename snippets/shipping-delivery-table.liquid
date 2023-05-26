@@ -1,0 +1,70 @@
+{% if block.settings.shipping_delivery != blank %}
+<div class="table_wrapper shipping_delivery">
+  <table class="table-striped">
+    <tbody>
+      {% if product.metafields.global.shipping_estimate.value %}
+      <tr>
+        <th class="label" scope="row">Shipping Estimate</th>
+        <td class="data" data-th="Shipping Estimate">{{ product.metafields.global.shipping_estimate.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.stock_status.value %}
+      <tr>
+        <th class="label" scope="row">Stock Status</th>
+        <td class="data" data-th="Stock Status">{{ product.metafields.global.stock_status.value }}</td>
+      </tr>
+      {% endif %}
+      <tr>
+        <th class="label" scope="row">Ships To</th>
+        <td class="data" data-th="Ships To">Ships to the 48 contiguous United States. For AK or HI delivery, please contact us for a shipping quote.</td>
+      </tr>
+      {% if product.metafields.global.shipping_methods.value %}
+        <tr>
+          <th class="label" scope="row">Ship Method</th>
+          <td class="data" data-th="Ship Method">{{ product.metafields.global.shipping_methods.value }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <th class="label" scope="row">Ship Method</th>
+          <td class="data" data-th="Ship Method">Ships via Freight Carrier - Scheduled Delivery</td>
+        </tr>
+      {% endif %}
+      {% comment %}{% if product.metafields.global.ship_weight.value %}
+      <tr>
+        <th class="label" scope="row">Ship Weight</th>
+        <td class="data" data-th="Stock Status">{{ product.metafields.global.ship_weight.value }}</td>
+      </tr>
+      {% endif %}{% endcomment %}
+      {% if product.metafields.global.shipping_time.value %}
+      <tr>
+        <th class="label" scope="row">Ship Time</th>
+        <td class="data" data-th="Stock Status">{{ product.metafields.global.shipping_time.value }}</td>
+      </tr>
+      {% endif %}
+      {% comment %}{% if product.metafields.global.shipping_type.value %}
+      <tr>
+        <th class="label" scope="row">Ship Type</th>
+        <td class="data" data-th="Stock Status">{{ product.metafields.global.shipping_type.value }}</td>
+      </tr>
+      {% endif %}{% endcomment %}
+      <tr>
+        <th class="label" scope="row">Shipping Policy</th>
+        <td class="data" data-th="Ships To">
+          <p>Thank you for your order! We will ship your order using the fastest, safest, and most reliable method possible. Small and medium-sized parcels will usually ship FedEx or UPS Ground, while large commercial items will ship via common freight carriers such as YRC, XPO Logistics, etc. </p>
+          <p>Every product on our site has been carefully selected to ship by a particular shipping method in order to provide you with an optimal delivery experience.</p>
+          <p>When your order ships, we will notify you via email. Included in your email will be a tracking number for your shipment. We encourage you to track your package online or on the phone with the carrier. Most companies can provide an estimated delivery date.</p>
+          View our<a href="https://mailboxdepotusa.com/policies/shipping-policy"> Full Shipping Policy here. </a>
+        </td>
+      </tr>
+      <tr>
+        <th class="label" scope="row">Return Policy</th>
+        <td class="data" data-th="Ships To">
+          <p>We offer a 30-day return period from the date of shipment. We will refund your order total, less our cost of shipping the item to you. In most cases, you will be responsible for the cost of shipping the item back to us.</p>
+          <p><strong>Important:</strong> Orders returned without authorization will NOT be processed for credit or refunds. <strong>YOU MUST obtain a Return Goods Authorization Number (RGA#) </strong> from us so that the credit for the merchandise and any refund can be properly processed.</p>
+          View our<a href="https://mailboxdepotusa.com/policies/refund-policy"> Full Return Policy here. </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endif %}

@@ -1,0 +1,147 @@
+<div class="custom-brand-cards {{ section.settings.section_class }}">
+  <div class="container">
+    <div class="brand-row">
+      {% for block in section.blocks %}
+      <div class="brand-col {{ block.settings.col_width }}_width">
+        <div class="mailbox-product">
+          {%- if block.settings.discount_badge != blank -%}
+          <label class="mb-discount"><span>{{ block.settings.discount_txt }}<br><span class="off">OFF</span></span></label>
+          {%- endif -%}
+          <div class="companylogo" style="background-color: {{ block.settings.companylogo_bg_color }};">
+          {%- if block.settings.brand_logo != blank -%}
+            <a href="{{ block.settings.brand_url }}"><img data-swift-lazy="1" loading="lazy" src="{{ block.settings.brand_logo | img_url: 'master' }}" alt="" width="" height=""></a>
+          {%- endif -%}
+          </div>
+          <div class="post-content" style="background-color: {{ block.settings.description_bg_color }};">
+            <div class="post-content-row">
+              <div class="post-content-col">
+                <div class="mailbox-description">
+                  {%- if block.settings.brand_description != blank -%}<div class="content">{{ block.settings.brand_description }}</div>{%- endif -%}
+                  {%- if block.settings.brand_footer_logo != blank -%}
+                   <div class="footerlogos">
+                     <a href="{{ block.settings.brand_url }}"><img data-swift-lazy="1" loading="lazy" src="{{ block.settings.brand_footer_logo | img_url: 'master' }}" alt="" width="" height=""></a>
+                   </div>
+                  {%- endif -%}
+                 </div>
+               </div>
+               <div class="post-content-col">
+                 <div class="mailbox-image">
+                   {%- if block.settings.mailbox_image != blank -%}
+                     <a href="{{ block.settings.brand_url }}"><img data-swift-lazy="1" loading="lazy" src="{{ block.settings.mailbox_image | img_url: 'master' }}" alt="" width="" height=""></a>
+                   {%- endif -%}
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Custom Brand Cards",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_class",
+        "label": "Custom Section Class"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Add Brand Card",
+        "settings": [
+          {
+            "type": "select",
+            "id": "col_width",
+            "options": [
+              {
+                "value": "one-fifth",
+                "label": "one-fifth width of column"
+              },
+              {
+                "value": "one-forth",
+                "label": "one-forth width of column"
+              },
+              {
+                "value": "one-third",
+                "label": "one-third width of column"
+              },
+              {
+                "value": "half",
+                "label": "half width of column"
+              },
+              {
+                "value": "full",
+                "label": "full width of column"
+              }
+            ],
+            "default": "full",
+            "label": "Column Width"
+          },
+          {
+            "type": "image_picker",
+            "id": "brand_logo",
+            "label": "Brand Logo"
+          },
+          {
+            "type": "url",
+            "id": "brand_url",
+            "label": "Brand URL"
+          },
+          {
+            "type": "color",
+            "id": "companylogo_bg_color",
+            "label": "Company Logo Background Color"
+          },
+          {
+            "type": "html",
+            "id": "brand_description",
+            "label": "Brand Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "brand_footer_logo",
+            "label": "Brand footer logo"
+          },
+          {
+            "type": "image_picker",
+            "id": "mailbox_image",
+            "label": "Mailbox Image"
+          },
+          {
+            "type": "color",
+            "id": "description_bg_color",
+            "label": "Description Background Color"
+          },
+          {
+            "type": "checkbox",
+            "id": "discount_badge",
+            "label": "Discount Badge"
+          },
+          {
+            "type": "text",
+            "id": "discount_txt",
+            "label": "Discount Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+		{
+          "name": "Custom Brand list",
+          "category": "collection",
+          "settings": {}
+		}
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,248 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+      {% if section.settings.top_content %}
+        <div class="top-content">{{ section.settings.top_content }}</div>
+      {% endif %}
+      <div class="bulk-order-form">
+        {% include 'bulk-order-form' %}
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+      <div class="bulk-team-box">
+        <div class="bulk-image">
+          {% if section.settings.bulk_image %}
+            <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.bulk_image | img_url: 'master' }}" alt="">
+          {% endif %}
+        </div>
+        <div class="blks">
+          {% if section.settings.step_heading %}<h3 class="heading-block">{{ section.settings.step_heading }}</h3>{% endif %}
+          {% if section.settings.process_heading %}<h3 class="heading-block">{{ section.settings.process_heading }}</h3>{% endif %}
+          <div class="expectation-secion steps hidden-xs">
+            <div class="steps-image">
+              {% if section.settings.steps_image %}<img data-swift-lazy="1" loading="lazy" src="{{ section.settings.steps_image | img_url: 'master' }}" alt="">{% endif %}
+            </div>
+            <div class="step-text">
+              <div class="col-sm-4 steps-block">
+                {% if section.settings.step1_heading %}<h4>{{ section.settings.step1_heading }}</h4>{% endif %}
+                {% if section.settings.step1_subtext %}{{ section.settings.step1_subtext }}{% endif %}
+              </div> 
+              <div class="col-sm-4 steps-block">
+                {% if section.settings.step2_heading %}<h4>{{ section.settings.step2_heading }}</h4>{% endif %}
+                {% if section.settings.step2_subtext %}{{ section.settings.step2_subtext }}{% endif %}
+              </div> 
+              <div class="col-sm-4 steps-block">
+                {% if section.settings.step3_heading %}<h4>{{ section.settings.step3_heading }}</h4>{% endif %}
+                {% if section.settings.step3_subtext %}{{ section.settings.step3_subtext }}{% endif %}
+              </div> 
+            </div>
+          </div>
+          <div class="row expectation-secion steps visible-xs">
+            <div class="row step-text">
+              <div class="col-sm-4 steps-block">
+                <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.step1_icon | img_url: 'master' }}"> 
+                {% if section.settings.step1_heading %}<h4>{{ section.settings.step1_heading }}</h4>{% endif %}
+                {% if section.settings.step1_subtext %}{{ section.settings.step1_subtext }}{% endif %}
+              </div> 
+              <div class="col-sm-4 steps-block">
+                <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.step2_icon | img_url: 'master' }}">
+                {% if section.settings.step2_heading %}<h4>{{ section.settings.step2_heading }}</h4>{% endif %}
+                {% if section.settings.step2_subtext %}{{ section.settings.step2_subtext }}{% endif %}
+              </div> 
+              <div class="col-sm-4 steps-block">
+                <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.step3_icon | img_url: 'master' }}">
+                {% if section.settings.step3_heading %}<h4>{{ section.settings.step3_heading }}</h4>{% endif %}
+                {% if section.settings.step3_subtext %}{{ section.settings.step3_subtext }}{% endif %}
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="expectation-secion below">
+          <div class="col-sm-6 bulk-order-text-box">
+            {% if section.settings.img1 %}<img data-swift-lazy="1" loading="lazy" class="icon-img time" src="{{ section.settings.img1 | img_url:'master' }} ">{% endif %}
+            {% if section.settings.til1 %}<h5>{{ section.settings.til1 }}</h5>{% endif %}
+            {% if section.settings.txt1 %}<p>{{ section.settings.txt1 }}</p>{% endif %}
+          </div>
+          <div class="col-sm-6 bulk-order-text-box">
+            {% if section.settings.img2 %}<img data-swift-lazy="1" loading="lazy" class="icon-img expert" src="{{ section.settings.img2 | img_url:'master' }} ">{% endif %}
+            {% if section.settings.til2 %}<h5>{{ section.settings.til2 }}</h5>{% endif %}
+            {% if section.settings.txt2 %}<p>{{ section.settings.txt2 }}</p>{% endif %}
+          </div>
+          <div class="col-sm-6 bulk-order-text-box">
+            {% if section.settings.img3 %}<img data-swift-lazy="1" loading="lazy" class="icon-img pricing" src="{{ section.settings.img3 | img_url:'master' }} ">{% endif %}
+            {% if section.settings.til3 %}<h5>{{ section.settings.til3 }}</h5>{% endif %}
+            {% if section.settings.txt3 %}<p>{{ section.settings.txt3 }}</p>{% endif %}
+          </div>
+          <div class="col-sm-6 bulk-order-text-box">
+            {% if section.settings.img4 %}<img data-swift-lazy="1" loading="lazy" class="icon-img custom" src="{{ section.settings.img4 | img_url:'master' }} ">{% endif %}
+            {% if section.settings.til4 %}<h5>{{ section.settings.til4 }}</h5>{% endif %}
+            {% if section.settings.txt4 %}<p>{{ section.settings.txt4 }}</p>{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Bulk Order Quote Content",
+    "class": "cms-bulk-order-quote",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left Content"
+      },
+      {
+        "type": "html",
+        "id": "top_content",
+        "label": "Top content text"
+      },
+      {
+        "type": "header",
+        "content": "Right Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "bulk_image",
+        "label": "Bulk order side image"
+      },
+      {
+        "type": "text",
+        "id": "step_heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "process_heading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "steps_image",
+        "label": "Steps image"
+      },
+      {
+        "type": "text",
+        "id": "step1_heading",
+        "label": "Step 1 Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "step1_subtext",
+        "label": "Step 1 Subtext"
+      },
+      {
+        "type": "image_picker",
+        "id": "step1_icon",
+        "label": "Step 1 icon for Mobile"
+      },
+      {
+        "type": "text",
+        "id": "step2_heading",
+        "label": "Step 2 Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "step2_subtext",
+        "label": "Step 2 Subtext"
+      },
+      {
+        "type": "image_picker",
+        "id": "step2_icon",
+        "label": "Step 2 icon for Mobile"
+      },
+      {
+        "type": "text",
+        "id": "step3_heading",
+        "label": "Step 3 Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "step3_subtext",
+        "label": "Step 3 Subtext"
+      },
+      {
+        "type": "image_picker",
+        "id": "step3_icon",
+        "label": "Step 3 icon for Mobile"
+      },
+      {
+        "type": "header",
+        "content": "Expectation"
+      },
+      {
+        "type": "image_picker",
+        "id": "img1",
+        "label": "Step 1 Image"
+      },
+      {
+        "type": "text",
+        "id": "til1",
+        "label": "Step 1 Title"
+      },
+      {
+        "type": "text",
+        "id": "txt1",
+        "label": "Step 1 Text"
+      },
+       {
+        "type": "image_picker",
+        "id": "img2",
+        "label": "Step 2 Image"
+      },
+      {
+        "type": "text",
+        "id": "til2",
+        "label": "Step 2 Title"
+      },
+      {
+        "type": "text",
+        "id": "txt2",
+        "label": "Step 2 Text"
+      },
+     {
+      "type": "image_picker",
+      "id": "img3",
+      "label": "Step 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "til3",
+      "label": "Step 3 Title"
+    },
+    {
+      "type": "text",
+      "id": "txt3",
+      "label": "Step 3 Text"
+    },
+    {
+        "type": "image_picker",
+        "id": "img4",
+        "label": "Step 4 Image"
+      },
+      {
+        "type": "text",
+        "id": "til4",
+        "label": "Step 4 Title"
+      },
+      {
+        "type": "text",
+        "id": "txt4",
+        "label": "Step 4 Text"
+      }
+    ],
+  	"presets": [
+		{
+          "name": "Bulk Order Pricing Section",
+          "category": "Section",
+          "settings": {}
+		}
+  	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

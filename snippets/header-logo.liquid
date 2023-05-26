@@ -1,0 +1,25 @@
+<div class="site-logo">
+  <a href="{{ routes.root_url }}" class="logo porto-main-logo" rel="home">
+    {%- if settings.header_overlap != blank and template == 'index' -%}
+      {%- if settings.logo_overlap_svg != '' -%}
+        <img data-swift-lazy="1" loading="lazy" src="{{ settings.logo_overlap_svg | img_url: 'master' }}" style="max-width:{{settings.logo_width | remove: 'px' | append: 'px' }};" alt="{{ image.alt | default: shop.name }}"/>
+      {%- else -%}
+        {%- if settings.logo_overlap != blank -%}
+          <img data-swift-lazy="1" loading="lazy" src="{{ settings.logo_overlap | img_url: 'master' }}" alt="{{ image.alt | default: shop.name }}"/>
+        {%- else -%}
+          {{shop.name}}
+        {%- endif -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- if settings.logo_svg != '' -%}
+      <img data-swift-lazy="1" loading="lazy" src="{{ settings.logo_svg | img_url: 'master' }}" style="max-width:{{settings.logo_width | remove: 'px' | append: 'px' }};" alt="{{ image.alt | default: shop.name }}"/>
+      {%- else -%}
+        {%- if settings.logo != blank -%}
+          <img data-swift-lazy="1" loading="lazy" src="{{ settings.logo | img_url: 'master' }}" alt="{{ image.alt | default: shop.name }}"/>
+        {%- else -%}
+          {{shop.name}}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  </a>
+</div>

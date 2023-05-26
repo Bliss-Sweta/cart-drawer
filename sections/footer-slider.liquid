@@ -1,0 +1,144 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<!--
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+-->
+<!-- <script src="https://d17nz991552y2g.cloudfront.net/app/js/jqueryandencoder.ffa5afd5124fbedceea9.js"></script> -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+  integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<section class="footer-slider">
+  <div class="container">
+    <h2 class="heading">Customers Who Trusted Us With Their Projects</h2>
+    <div class="footer-slider-container">
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/usps_png.jpg?v=1647508677"
+        alt="uspc"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/us-department-of-state_png.jpg?v=1647508677"
+        alt="us-department-of-state"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/us-department-of-defense_png.jpg?v=1647508677"
+        alt="us-department-of-defense"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/syracuse-university_png.jpg?v=1647508677"
+        alt="syracuse-university"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/oregon-tech_png_30f7ffb7-19a2-4eb1-a539-0c2e85a82902.jpg?v=1647508677"
+        alt="oregon-tech"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/nbc_png.jpg?v=1647508677"
+        alt="nbc"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/mlb_png.jpg?v=1647508677"
+        alt="mlb"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/jp-morgan_png_8a33668b-bd18-4503-b691-f7aca439860c.jpg?v=1647508677"
+        alt="jp-morgan"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/harvard-university_png_be749206-050d-4509-b183-e8207217a77d.jpg?v=1647508677"
+        alt="harvard-university"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/cisco_png.jpg?v=1647508677"
+        alt="cisco"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/caterpillar_png.jpg?v=1647508677"
+        alt="caterpillar"
+      >
+      <img
+        data-swift-lazy="1"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0609/9589/5490/files/balfour-beatty_png_6e815ad3-741b-4987-8378-c9d7e8a71e1e.jpg?v=1647508676"
+        alt="balfour-beatty"
+      >
+    </div>
+  </div>
+</section>
+<script>
+    $(document).on('ready',function(){
+      $('.footer-slider-container').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+
+    ]
+  });
+    })
+</script>
+{% schema %}
+   {
+    "name": "Footer slider",
+    "settings": [
+],
+"presets":[{
+ "name": "Footer slider",
+    "category": "Page"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

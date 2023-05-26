@@ -1,0 +1,226 @@
+.shippingText {
+  background-color: #fff;
+  padding: 15px 26px 19px;
+  line-height: 21px;
+  text-align: left;
+  clear: both;
+  float: left;
+  margin: 0 0 10px;
+  width: 100%;
+}
+.shippingEst:before {
+  content: "Processing Time According to the Manufacturer:";
+  display: inline;
+  margin-right: 8px;
+}
+.shippingEst:after {
+  content: "Ships directly from the factory floor to ensure the quickest available delivery.";
+  display: block;
+  padding-top: 8px;
+  color: #f7646a;
+  font-size: 14px;
+  font-weight: 500;
+}
+.shippingEst .value {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+.shipping-return-lead-times-section {
+  display: none;
+}
+.shippingImg {
+  background-color: #fff;
+  text-align: left;
+  clear: both;
+  float: left;
+  margin: 0 0 10px;
+  display: block;
+  width: 100%;
+}
+.shippingImg .estimate-lead_img {
+  width: 100%;
+  display: inline-block;
+}
+/* Discount Table CSS Starts */
+.Discount-Wrapper {
+  margin-top: 20px;
+  width: 50%;
+}
+.Discount-Wrapper .discount-title {
+  font-size: 13px;
+  color: #f7646a;
+  font-weight: bold;
+  margin: 0 0 14px 0;
+}
+.Discount-Wrapper .Discount-Table {
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 1px;
+  font-size: 13px;
+}
+.Discount-Wrapper .Discount-Table tr th {
+  border: 1px solid #dddddd;
+  color: #fff;
+  background: #f7646a;
+  padding: 8px;
+}
+.Discount-Wrapper .Discount-Table tr:first-child th:first-child {
+  border-radius: 1px 0 0 0;
+}
+.Discount-Wrapper .Discount-Table tr:first-child th:last-child {
+  border-radius: 0 1px 0 0;
+}
+.Discount-Wrapper .discount-table-row td {
+  color: #000;
+  background: #fff;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+.Discount-Wrapper .Discount-Table tr:not(:first-child) td {
+  border-top: none;
+}
+.Discount-Wrapper .Discount-Table tr:last-child td:first-child {
+  border-radius: 0 0 0 1px;
+}
+.Discount-Wrapper .Discount-Table tr:last-child td:first-child {
+  border-radius: 0 0 1px 0;
+}
+@media (max-width: 991px) {
+  .Discount-Wrapper {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .Discount-Wrapper {
+    width: 50%;
+  }
+}
+@media (max-width: 575px) {
+  .Discount-Wrapper {
+    width: 100%;
+  }
+}
+/* Discount Table CSS Ends */
+
+/* product page sale text css */
+.product-image .labels .onsale {
+  background: #f7646a;
+}
+.product-image.product-image-zoom.zoom-available {
+  position: relative;
+}
+.sale-text {
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  background-color: #f7646a;
+  border-radius: 0px 6px 1px 6px;
+  z-index: 999;
+  margin: 0px 0;
+  min-width: 71px;
+  padding: 0.5rem 1rem;
+}
+.sale-text span {
+  display: contents;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* product page sale text css end */
+
+/* HOMEPAGE REVIEWS CAROUSEL CSS STARTS */
+.ReviewsCarousel {
+  padding: 0 0 30px;
+}
+.ReviewsCarousel .yotpo-reviews-carousel .yotpo-small-box {
+  display: none;
+}
+/* HOMEPAGE REVIEWS CAROUSEL CSS ENDS */
+
+.zsiq_floatmain {
+  display: block !important;
+}
+/* START: Discount Code Box */
+.hulkapps_discount_hide {
+  justify-content: space-between !important;
+}
+.hulkapps_discount_hide .hulkapps_discount_code {
+  width: 100% !important;
+  max-width: 100%;
+}
+.discount_code_box .after_discount_price {
+  font-size: 18px;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+}
+.discount_code_box .final-total {
+  font-weight: 700;
+  font-size: 15px;
+}
+/* END: Discount Code Box */
+/* START : Cart Drawer */
+.cart-wrapper .qb-price-item {
+  display: none;
+}
+/* END : Cart Drawer */
+/* START : Link crawling */
+.top-banners .icons .iconchat,
+span.wishlist-popup {
+  cursor: pointer;
+}
+.shop_table.cart-table span.remove.remove-product.remove-wishlist {
+  font-size: 0;
+}
+.shop_table.cart-table span.remove.remove-product {
+  z-index: 3;
+  text-align: center;
+  font-size: 11px;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #fff;
+  color: #222529;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #0006;
+  cursor: pointer;
+}
+.shop_table.cart-table span.remove.remove-product.remove-wishlist:before {
+  content: "\e82c";
+  font-family: porto;
+  font-size: 11px;
+}
+/* END: Link crawling */
+/* START: Cart Page discount total */
+.main-container .checkout-cart .order-total .amount,
+.cart-subtotal .amount {
+  font-size: 16px !important;
+  display: inline-grid;
+}
+.main-container
+  .checkout-cart
+  .cart-v2
+  .card.card-default
+  .card-body
+  tbody
+  .order-total
+  th,
+.checkout-cart .cart-v2 .card.card-default .card-body tbody .cart-subtotal th {
+  padding: 10px 12px !important;
+  vertical-align: baseline;
+}
+/* END: Cart page discount total */
+/* START : Secure Checkout image */
+li.secure-checkout {
+  width: 132px;
+  border: 1px solid #06205b;
+  height: 48px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+/* END: Secure Checkout image */

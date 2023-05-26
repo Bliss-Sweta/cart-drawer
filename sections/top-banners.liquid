@@ -1,0 +1,233 @@
+<div class="mobile_top-banners">
+  <div class="number">
+    <a
+      href="tel:{{ section.settings.phone_number_link }}"
+      style="background-color: {{ section.settings.number_bgcolor }};"
+    >
+      <span>{{ section.settings.call_txt }} </span>{{ section.settings.phone_number }}
+    </a>
+  </div>
+</div>
+<div class="top-banners" style="background-color: {{ section.settings.section_bgcolor }};">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class=" banner-contact" style="background-color: {{ section.settings.contact_bgcolor }};">
+          <div class="col-sm-6">
+            <div class="number">
+              <a
+                href="tel:{{ section.settings.phone_number_link }}"
+                style="background-color: {{ section.settings.number_bgcolor }};"
+              >
+                <span>{{ section.settings.call_txt }} </span>{{ section.settings.phone_number }}
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="icons">
+              <div class="iconfaq icon-home-banner">
+                <a href="{{ section.settings.faq_iconlink }}"
+                  ><span class="icontext">{{ section.settings.faq_icontext }}</span>
+                  <img
+                    data-swift-lazy="1"
+                    loading="lazy"
+                    src="{{ section.settings.faq_icon | img_url: 'master' }}"
+                    alt="FAQ"
+                  >
+                </a>
+              </div>
+              <div class="iconchat icon-home-banner">
+                <span
+                  id="chat-open"
+                  ><span class="icontext">{{ section.settings.chat_icontext }}</span>
+                  <img
+                    data-swift-lazy="1"
+                    loading="lazy"
+                    src="{{ section.settings.chat_icon | img_url: 'master' }}"
+                    alt="CHAT"
+                  >
+                </span>
+              </div>
+              <div class="iconphone icon-home-banner">
+                <a href="tel:{{ section.settings.phone_number_link }}"
+                  ><span class="icontext">{{ section.settings.call_icontext }}</span>
+                  <img
+                    data-swift-lazy="1"
+                    loading="lazy"
+                    src="{{ section.settings.call_icon | img_url: 'master' }}"
+                    alt="CALL"
+                  >
+                </a>
+              </div>
+            </div>
+            <div class="slogantext">{{ section.settings.slogantext }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="discount-contact" style="background-color: {{ section.settings.discount_bgcolor }};">
+          <div class="content">
+            <a href="{{ section.settings.bulk_discountlink }}">{{ section.settings.bulk_bannertitle }}</a>
+          </div>
+          <div class="image icon-home-banner">
+            <a href="{{ section.settings.bulk_discountlink }}">
+              <img
+                data-swift-lazy="1"
+                loading="lazy"
+                src="{{ section.settings.bulkdiscount_icon | img_url: 'master' }}"
+                alt="Bulk Discounts Available"
+              >
+            </a>
+          </div>
+          <div class="cbu-price">
+            <div class="content backed-by icon-home-banner">
+              <img
+                data-swift-lazy="1"
+                loading="lazy"
+                src="{{ section.settings.check_icon | img_url: 'master' }}"
+                alt="CBU PRICE MATCH GUARANTEE"
+              >
+              {{ section.settings.cbuprice_text }}
+            </div>
+            <div class="button">
+              <a href="{{ section.settings.bulk_discountlink }}">{{ section.settings.quote_btntext }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Top Banners",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_bgcolor",
+      "label": "Section Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Contact Banner"
+    },
+    {
+      "type": "color",
+      "id": "contact_bgcolor",
+      "label": "Contact Banner Background Color"
+    },
+    {
+      "type": "text",
+      "id": "call_txt",
+      "label": "Call Text"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone Number"
+    },
+    {
+      "type": "text",
+      "id": "phone_number_link",
+      "label": "Phone Number Link"
+    },
+    {
+      "type": "color",
+      "id": "number_bgcolor",
+      "label": "Call us Background Color"
+    },
+    {
+      "type": "text",
+      "id": "faq_icontext",
+      "label": "FAQ Icon Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_icon",
+      "label": "FAQ Icon"
+    },
+    {
+      "type": "url",
+      "id": "faq_iconlink",
+      "label": "FAQ Icon Link"
+    },
+    {
+      "type": "text",
+      "id": "chat_icontext",
+      "label": "Chat Icon Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "chat_icon",
+      "label": "Chat Icon"
+    },
+    {
+      "type": "text",
+      "id": "call_icontext",
+      "label": "Call Icon Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "call_icon",
+      "label": "Call Icon"
+    },
+    {
+      "type": "text",
+      "id": "slogantext",
+      "label": "Slogan Text"
+    },
+    {
+      "type": "header",
+      "content": "Bulk Discount Banner"
+    },
+    {
+      "type": "color",
+      "id": "discount_bgcolor",
+      "label": "Bulk Discount Banner Background Color"
+    },
+    {
+      "type": "text",
+      "id": "bulk_bannertitle",
+      "label": "Bulk Banner Title"
+    },
+    {
+      "type": "url",
+      "id": "bulk_discountlink",
+      "label": "Bulk Discount Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "bulkdiscount_icon",
+      "label": "Bulk Discount Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "check_icon",
+      "label": "Check Icon"
+    },
+    {
+      "type": "html",
+      "id": "cbuprice_text",
+      "label": "CBU Price Text"
+    },
+    {
+      "type": "text",
+      "id": "quote_btntext",
+      "label": "Button Text"
+    }
+  ],
+  "presets": [
+{
+        "name": "Top Banners",
+        "category": "banner",
+        "settings": {}
+}
+	]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

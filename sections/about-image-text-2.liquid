@@ -1,0 +1,49 @@
+<section class="about-image-text-2">
+  <div class="container">
+  {% if section.settings.image != blank %}
+  <div class="img-box">
+    <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.image | img_url:'original' }}">
+  </div>
+  {% endif %}
+  {% if section.settings.heading != blank %}
+  <h2 class="heading">{{section.settings.heading}}</h2>
+  {% endif %}
+  {% if section.settings.detail != blank %}
+  <p class="detail">{{section.settings.detail}}</p>
+  {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "About image text 2",
+    "settings": [{
+	"type":"image_picker",
+	"id": "image",
+	"label" : "Image"
+},
+{
+	"type":"text",
+	"id": "heading",
+	"label" : "Heading"
+},
+{
+	"type":"richtext",
+	"id": "detail",
+	"label" : "Detail"
+}
+
+],
+"presets":[{
+ "name": "About image text 2",
+    "category": "About page"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

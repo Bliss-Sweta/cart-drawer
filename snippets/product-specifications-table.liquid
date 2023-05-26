@@ -1,0 +1,151 @@
+{% if block.settings.product_specifications != blank %}
+<div class="table_wrapper product_specifications">
+  <table class="table-striped">
+    <tbody>
+      {% if product.metafields.global.weight.value != blank %}
+      <tr>
+        <th class="label" scope="row">Weight</th>
+        <td class="data">{{ product.metafields.global.weight.value }} lbs</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.shipping_info.value != blank %}
+      <tr>
+        <th class="label" scope="row">Shipping Info</th>
+        <td class="data">{{ product.metafields.global.shipping_info.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.vendor != blank %}
+      <tr>
+        <th class="label" scope="row">Brand</th>
+        <td class="data">{{ product.vendor }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.multi_family_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">Multi Family Type</th>
+        <td class="data">{{ product.metafields.global.multi_family_type.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.suite_height_4b.value != blank %}
+      <tr>
+        <th class="label" scope="row">4B Horizontal Suite Height</th>
+        <td class="data">{{ product.metafields.global.suite_height_4b.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.suite_height_4c.value != blank %}
+      <tr>
+        <th class="label" scope="row">4C Horizontal Suite Height</th>
+        <td class="data">{{ product.metafields.global.suite_height_4c.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.number_of_parcel_lockers.value != blank %}
+      <tr>
+        <th class="label" scope="row">Number of Parcel Lockers</th>
+        <td class="data">{{ product.metafields.global.number_of_parcel_lockers.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.number_of_mb_doors.value != blank %}
+      <tr>
+        <th class="label" scope="row">Number of Mailbox Doors</th>
+        <td class="data">{{ product.metafields.global.number_of_mb_doors.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.mailbox_mount_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">Mount Type</th>
+        <td class="data">{{ product.metafields.global.mailbox_mount_type.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.mailbox_material.value != blank %}
+      <tr>
+        <th class="label" scope="row">Material</th>
+        <td class="data">{{ product.metafields.global.mailbox_material.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.compartment_size.value != blank %}
+      <tr>
+        <th class="label" scope="row">Compartment Size</th>
+        <td class="data">{{ product.metafields.global.compartment_size.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.mailbox_size.value != blank %}
+      <tr>
+        <th class="label" scope="row">Mailbox Size</th>
+        <td class="data">{{ product.metafields.global.mailbox_size.value }}</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <table class="table-striped">
+    <tbody>
+      {% if product.metafields.global.mailbox_style.value != blank %}
+      <tr>
+        <th class="label" scope="row">Mailbox Style</th>
+        <td class="data">{{ product.metafields.global.mailbox_style.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.mailbox_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">Mailbox Type</th>
+        <td class="data">{{ product.metafields.global.mailbox_type.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.suite_height.value != blank %}
+      <tr>
+        <th class="label" scope="row">Suite Height</th>
+        <td class="data">{{ product.metafields.global.suite_height.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.dimensions.value != blank %}
+      <tr>
+        <th class="label" scope="row">Dimensions</th>
+        <td class="data">{{ product.metafields.global.dimensions.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.security.value != blank %}
+      <tr>
+        <th class="label" scope="row">Security</th>
+        <td class="data">{{ product.metafields.global.security.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.number_of_tenants.value != blank %}
+      <tr>
+        <th class="label" scope="row">Number of Tenants</th>
+        <td class="data">{{ product.metafields.global.number_of_tenants.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.mail_capacity.value != blank %}
+      <tr>
+        <th class="label" scope="row">Mail Capacity</th>
+        <td class="data">{{ product.metafields.global.mail_capacity.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.included_accessories.value != blank %}
+      <tr>
+        <th class="label" scope="row">Included Accessories</th>
+        <td class="data">{{ product.metafields.global.included_accessories.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.delivery_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">Delivery Type</th>
+        <td class="data">{{ product.metafields.global.delivery_type.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.access_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">Access Type</th>
+        <td class="data">{{ product.metafields.global.access_type.value }}</td>
+      </tr>
+      {% endif %}
+      {% if product.metafields.global.cbu_mailbox_type.value != blank %}
+      <tr>
+        <th class="label" scope="row">CBU Mailbox Type</th>
+        <td class="data">{{ product.metafields.global.cbu_mailbox_type.value }}</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+  

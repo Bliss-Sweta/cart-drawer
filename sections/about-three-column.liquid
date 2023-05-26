@@ -1,0 +1,120 @@
+<section class="about-three-column">
+  <div class="card-container container">
+  <div class="card col-12 col-md-4">
+  {% if section.settings.image1 != blank %}
+  <div class="img-box">
+    <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.image1 | img_url:'original' }}">
+  </div>
+  {% endif %}
+  {% if section.settings.heading1 != blank %}
+  <h2 class="heading">{{section.settings.heading1}}</h2>
+  {% endif %}
+  {% if section.settings.detail1 != blank %}
+  <p class="detail">{{section.settings.detail1}}</p>
+  {% endif %}
+  </div>
+  <div class="card col-12 col-md-4">
+  {% if section.settings.image2 != blank %}
+  <div class="img-box">
+    <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.image2 | img_url:'original' }}">
+  </div>
+  {% endif %}
+  {% if section.settings.heading2 != blank %}
+  <h2 class="heading">{{section.settings.heading2}}</h2>
+  {% endif %}
+  {% if section.settings.detail2 != blank %}
+  <p class="detail">{{section.settings.detail2}}</p>
+  {% endif %}
+  </div>
+  <div class="card col-12 col-md-4">
+  {% if section.settings.image3 != blank %}
+  <div class="img-box">
+    <img data-swift-lazy="1" loading="lazy" src="{{ section.settings.image3 | img_url:'original' }}">
+  </div>
+  {% endif %}
+  {% if section.settings.heading3 != blank %}
+  <h2 class="heading">{{section.settings.heading3}}</h2>
+  {% endif %}
+  {% if section.settings.detail3 != blank %}
+  <p class="detail">{{section.settings.detail3}}</p>
+  {% endif %}
+  </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "About three column",
+    "settings": [
+{
+"type":"header",
+"content":"First column"
+},
+{
+	"type":"image_picker",
+	"id": "image1",
+	"label" : "Image"
+},
+{
+	"type":"text",
+	"id": "heading1",
+	"label" : "Heading"
+},
+{
+	"type":"richtext",
+	"id": "detail1",
+	"label" : "Detail"
+},
+{
+"type":"header",
+"content":"Second column"
+},
+{
+	"type":"image_picker",
+	"id": "image2",
+	"label" : "Image"
+},
+{
+	"type":"text",
+	"id": "heading2",
+	"label" : "Heading"
+},
+{
+	"type":"richtext",
+	"id": "detail2",
+	"label" : "Detail"
+},
+{
+"type":"header",
+"content":"Third column"
+},
+{
+	"type":"image_picker",
+	"id": "image3",
+	"label" : "Image"
+},
+{
+	"type":"text",
+	"id": "heading3",
+	"label" : "Heading"
+},
+{
+	"type":"richtext",
+	"id": "detail3",
+	"label" : "Detail"
+}
+
+],
+"presets":[{
+ "name": "About three column",
+    "category": "About page"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

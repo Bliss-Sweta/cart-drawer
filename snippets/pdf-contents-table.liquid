@@ -1,0 +1,28 @@
+{% if block.settings.pdf_contents != blank %}
+<div class="downloadable-file-wrapper">
+  {% if product.metafields.global.pdf_documents.value != blank %}
+  <div class="pa_attachments pdf-icon">
+    <h3>PDF Documents:</h3>
+    {{ product.metafields.global.pdf_documents.value }}
+  </div>
+  {% endif %}
+  {% if product.metafields.global.dwg_documents.value != blank %}
+  <div class="pa_attachments dwg-icon">
+    <h3>DWG Documents:</h3>
+    {{ product.metafields.global.dwg_documents.value }}
+  </div>
+  {% endif %}
+  {% if product.metafields.global.ps_documents.value != blank %}
+  <div class="pa_attachments doc-icon">
+    <h3>Product Specification Documents:</h3>
+    {{ product.metafields.global.ps_documents.value }}
+  </div>
+  {% endif %}
+  {% if product.metafields.global.pd_documents.value != blank %}
+  <div class="pa_attachments pdf-icon">
+    <h3>Product Details:</h3>
+    {{ product.metafields.global.pd_documents.value }}
+  </div>
+  {% endif %}
+</div>
+{% endif %}

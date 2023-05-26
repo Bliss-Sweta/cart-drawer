@@ -1,0 +1,32 @@
+<div class="CustomText {{ section.settings.section_class }}">
+  {% if section.settings.page_title != blank %}<h1 class="page-title">{{ section.settings.page_title }}</h1>{% endif %}
+  {% if section.settings.top_content != blank %}{{ section.settings.top_content }}{% endif %}
+</div>
+{% schema %}
+  {
+    "name": "Custom_Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_class",
+        "label": "Custom Section Class"
+      },
+      {
+        "type": "text",
+        "id": "page_title",
+        "label": "Page Title"
+      },
+      {
+        "type": "richtext",
+        "id": "top_content",
+        "label": "Description"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
